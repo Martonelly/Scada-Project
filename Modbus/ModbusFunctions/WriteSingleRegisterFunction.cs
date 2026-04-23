@@ -51,7 +51,7 @@ namespace Modbus.ModbusFunctions
                 address = (ushort)IPAddress.NetworkToHostOrder((short)address);
                 value = (ushort)IPAddress.NetworkToHostOrder((short)value);
 
-                r.Add(new Tuple<PointType, ushort>(PointType.ANALOG_OUTPUT, address), value);
+                r.Add(new Tuple<PointType, ushort>(PointType.ANALOG_INPUT, address), value);
             }
             else
             {
