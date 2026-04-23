@@ -48,10 +48,11 @@ namespace Modbus.ModbusFunctions
             if (response[7] != 0x80 + CommandParameters.FunctionCode)
             {
                 //Starting address
-                var address = BitConverter.ToInt16(response, 8);
+                //var address = BitConverter.ToInt16(response, 8);
+                var address = ((ModbusReadCommandParameters)CommandParameters).StartAddress;
                 var count = 0;
                 //Go for the whole byteCount
-                for (int i = 0; i < response[9]; i++) 
+                for (int i = 0; i < response[8]; i++) 
                 {
                     //Need to get the current byte
                     byte temp = response[9 + i];
@@ -59,7 +60,7 @@ namespace Modbus.ModbusFunctions
                     for (int j = 0; j < 8; j++) 
                     {
                         //Value needs to be one or zero
-                        ushort value = (ushort)(temp & 0x10000000);
+                        ushort value = (ushort)(temp & 0x00000001);
                         r.Add(new Tuple<PointType, ushort>(PointType.DIGITAL_OUTPUT, (ushort)address), value);
                         //Reset for the next bit
                         temp >>= 1;
@@ -67,7 +68,7 @@ namespace Modbus.ModbusFunctions
                         count++;
                         ushort quantity = ((ModbusReadCommandParameters)CommandParameters).Quantity;
                         //If you reach the end of the last coil
-                        if (quantity == count) {
+                        if (quantity >= count) {
                             break;
                         }
                     }
@@ -77,7 +78,7 @@ namespace Modbus.ModbusFunctions
                 HandeException(response[8]);
             }
 
-                return r;
+            return r;
         }
     }
 }
