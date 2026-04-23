@@ -10,6 +10,7 @@ namespace dCom.Configuration
 {
     internal class ConfigReader : IConfiguration
 	{
+		//Reads the RtCfg.txt file on startup
 		private ushort transactionId = 0;
 
 		private byte unitAddress;

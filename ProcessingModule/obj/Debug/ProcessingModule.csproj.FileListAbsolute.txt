@@ -6,3 +6,12 @@ C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\bin\Debug\Modbus.dl
 C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\bin\Debug\Common.pdb
 C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\obj\Debug\ProcessingModule.dll
 C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\obj\Debug\ProcessingModule.pdb
+C:\Users\Marci\Documents\GitHub\Scada-Project\ProcessingModule\obj\Debug\ProcessingModule.csproj.AssemblyReference.cache
+C:\Users\Marci\Documents\GitHub\Scada-Project\ProcessingModule\obj\Debug\ProcessingModule.csproj.CoreCompileInputs.cache
+C:\Users\Marci\Documents\GitHub\Scada-Project\ProcessingModule\bin\Debug\ProcessingModule.dll
+C:\Users\Marci\Documents\GitHub\Scada-Project\ProcessingModule\bin\Debug\ProcessingModule.pdb
+C:\Users\Marci\Documents\GitHub\Scada-Project\ProcessingModule\bin\Debug\Common.dll
+C:\Users\Marci\Documents\GitHub\Scada-Project\ProcessingModule\bin\Debug\Common.pdb
+C:\Users\Marci\Documents\GitHub\Scada-Project\ProcessingModule\obj\Debug\Processi.B4D6C848.Up2Date
+C:\Users\Marci\Documents\GitHub\Scada-Project\ProcessingModule\obj\Debug\ProcessingModule.dll
+C:\Users\Marci\Documents\GitHub\Scada-Project\ProcessingModule\obj\Debug\ProcessingModule.pdb
