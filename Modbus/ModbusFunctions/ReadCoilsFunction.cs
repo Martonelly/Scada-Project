@@ -68,7 +68,7 @@ namespace Modbus.ModbusFunctions
                         count++;
                         ushort quantity = ((ModbusReadCommandParameters)CommandParameters).Quantity;
                         //If you reach the end of the last coil
-                        if (quantity >= count) {
+                        if (quantity <= count) {
                             break;
                         }
                     }

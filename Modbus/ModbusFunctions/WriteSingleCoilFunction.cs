@@ -47,11 +47,11 @@ namespace Modbus.ModbusFunctions
             if (response[7] != CommandParameters.FunctionCode + 0x80) {
                 var address = BitConverter.ToUInt16(response, 8);
                 var value = BitConverter.ToUInt16(response, 10);
-                //Convert IP to ushort
+              
                 address = (ushort)IPAddress.NetworkToHostOrder((short)address);
                 value = (ushort)IPAddress.NetworkToHostOrder((short)value);
 
-                r.Add(new Tuple<PointType, ushort>(PointType.DIGITAL_INPUT, address), value);
+                r.Add(new Tuple<PointType, ushort>(PointType.DIGITAL_OUTPUT, address), value);
             }
             else
             {
