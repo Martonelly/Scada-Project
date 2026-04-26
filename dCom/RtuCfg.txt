@@ -6,4 +6,4 @@ IN_REG  1 2300  0  0   4095  2000  AI  @NivoVodeURezervoaru  3
 DO_REG  1 2700  0  0   1     0     DO  @StanjeStop 2
 DO_REG  1 2702  0  0   1     0     DO  @StanjeVentil 2
 DO_REG  2 2705  0  0   1     0     DO  @StanjeP 2
-HR_INT  1 3000  0  0   4095  1200  AO  @NapajanjeMotoraPumpe 3
+HR_INT  1 1300  0  0   4095  1200  AO  @NapajanjeMotoraPumpe 3
