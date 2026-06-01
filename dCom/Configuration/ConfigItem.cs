@@ -1,6 +1,7 @@
 ﻿using Common;
 using System;
 using System.Collections.Generic;
+using System.Windows.Media.TextFormatting;
 
 namespace dCom.Configuration
 {
@@ -264,9 +265,9 @@ namespace dCom.Configuration
             }
         }
 
-        #endregion Properties
+		#endregion Properties
 
-        public ConfigItem(List<string> configurationParameters)
+		public ConfigItem(List<string> configurationParameters)
 		{
 			RegistryType = GetRegistryType(configurationParameters[0]);
 			int temp;
@@ -285,18 +286,97 @@ namespace dCom.Configuration
 			DefaultValue = (ushort)temp;
 			ProcessingType = configurationParameters[7];
 			Description = configurationParameters[8].TrimStart('@');
-            if (configurationParameters[9].Equals("#"))
-            {
-                AcquisitionInterval = 1;
-            }
-            else
-            {
-                Int32.TryParse(configurationParameters[9], out temp);
-                AcquisitionInterval = temp;
-            }
-        }
+			if (configurationParameters[9].Equals("#"))
+			{
+				AcquisitionInterval = 1;
+			}
+			else
+			{
+				Int32.TryParse(configurationParameters[9], out temp);
+				AcquisitionInterval = temp;
+			}
+			//Here TODO for config 
+			//ScaleFactor = 10
+			//Deviation = 11
+			//EGU_Min = 12
+			//EGU_Max = 13
+			//abnormalValue = 14
+			//LowLimit = 15
+			//HighLimit = 16
 
-		private PointType GetRegistryType(string registryTypeName)
+			//ScaleFactor
+			if (!configurationParameters[10].Equals('#'))
+			{
+				Int32.TryParse(configurationParameters[10], out temp);
+				ScaleFactor = temp;
+			}
+			else
+			{
+				ScaleFactor = 1;
+			}
+			//Deviation
+			if (!configurationParameters[11].Equals('#'))
+			{
+				Int32.TryParse(configurationParameters[11], out temp);
+				Deviation = temp;
+			}
+			else
+			{
+				Deviation = 1;
+			}
+			//EGU_Min
+			if (!configurationParameters[12].Equals('#'))
+			{
+				Double.TryParse(configurationParameters[12], out doubleTemp);
+				EGU_Min = doubleTemp;
+			}
+			else
+			{
+				EGU_Min = 1;
+			}
+			//EGU_Max
+			if (!configurationParameters[13].Equals('#'))
+			{
+				Double.TryParse(configurationParameters[13], out doubleTemp);
+				EGU_Max = doubleTemp;
+			}
+			else
+			{
+				EGU_Max = 1;
+			}
+			//AbnormalValue
+			if (!configurationParameters[14].Equals('#'))
+			{
+				Int32.TryParse(configurationParameters[14], out temp);
+				AbnormalValue = (ushort)temp;
+			}
+			else
+			{
+				AbnormalValue = 1;
+			}
+			//HighLimit
+			if (!configurationParameters[15].Equals('#'))
+			{
+				Double.TryParse(configurationParameters[15], out doubleTemp);
+				HighLimit = doubleTemp;
+			}
+			else
+			{
+				HighLimit = 1;
+			}
+			//LowLimit
+			if (!configurationParameters[16].Equals('#'))
+			{
+				Double.TryParse(configurationParameters[16], out doubleTemp);
+				LowLimit = doubleTemp;
+			}
+			else
+			{
+				LowLimit = 1;
+			}
+		}
+
+        private PointType GetRegistryType(string registryTypeName)
 		{
 			PointType registryType;
 			switch (registryTypeName)

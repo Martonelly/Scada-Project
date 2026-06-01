@@ -1,5 +1,6 @@
 ﻿using Common;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace ProcessingModule
@@ -60,8 +61,15 @@ namespace ProcessingModule
 
 		private void AutomationWorker_DoWork()
 		{
+			//TODO add your eguConverter and outputs
+			EGUConverter eguConverter = new EGUConverter();
+			PointIdentifier digitalOut1 = new PointIdentifier(PointType.DIGITAL_OUTPUT, 2700);
+			//TODO Make a list of your point identifiers
+			List<PointIdentifier> pointList = new List<PointIdentifier> {digitalOut1};
 			//while (!disposedValue)
 			//{
+			// Take the values from the storage and proceed with the buisiness logic
+				List<IPoint> points = storage.GetPoints(pointList); 
 			//}
 		}
 
